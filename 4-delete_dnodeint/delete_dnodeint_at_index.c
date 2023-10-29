@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- * delete_dnodeint_at_index - Delete node at specific index frm list
+ * delete_dnodeint_at_index - Delete a node at a specific index from a list
  *
- * @head: A pointer to first element of list
- * @index: The index of node to delete
+ * @head: A pointer to the first element of a list
+ * @index: The index of the node to delete
  *
- * Return: 1 on success -1 on failure
+ * Return: 1 on success, -1 on failure
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
@@ -43,7 +43,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	else
 	{
-		(*head)->prev->prev = (*head)->prev;
+		(*head)->prev->next = (*head)->next;
 		free(*head);
 		if ((*head)->next)
 			(*head)->next->prev = (*head)->prev;
